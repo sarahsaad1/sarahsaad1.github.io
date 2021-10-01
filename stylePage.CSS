@@ -1,0 +1,70 @@
+
+body {
+
+    background-image: url(image/university.jpg);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 20%;
+
+}
+
+h1 {
+
+color: #cc9900;
+
+}
+
+ul {
+    list-style-type: square;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+ol ol {
+    list-style-type: lower-roman;
+}
+
+a:link {
+    text-decoration: none;
+    color: red;
+  }
+
+a:visited {
+    text-decoration: none;
+    color: blue;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: green;
+  }
+
+  a:active {
+    text-decoration: underline;
+    color: black;
+  }
+
+  p.sheet2 {
+
+font-size: large;
+font-family :'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+color :#339966;
+  }
+
+  p.sheet3 {
+
+    font-size: medium;
+    font-family :'Times New Roman', Times, serif ;
+    color :rgb(0, 46, 173);
+      }
+
+h1.sheet1 {
+    border: 6px green solid;
+    width :500px ;
+    padding: 5px;
+  margin: 10px;
+  text-align: center;
+}
+    
