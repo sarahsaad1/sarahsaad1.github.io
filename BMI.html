@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<haed>
+    <meta charset="utf-8">
+    <title>BMI Calculator Create Using JavaScript</title>
+</haed>
+
+<body>
+    <h1>BMI Calculator Create Using JavaScript</h1>
+    <!--get Weight from user-->
+    <label for="kg">Your Weight(kg):</label>
+    <input type="text" id="kg"><br><br>
+    <!--get Height from user-->
+    <label for="cm">Your Height(cm):</label>
+    <input type="text" id="cm"><br><br>
+      <!--A button when pressed, the calculations are done-->
+    <button onclick="Calculate()">Calculate BMI</button><br><br>
+
+    <p id="para1">Your BMI: </p>
+    <p id="para2">This Means: Your BMI: </p>
+
+
+    <script>
+        function Calculate() {
+            var x = document.getElementById("kg").value; //get the value from the form
+            var y = document.getElementById("cm").value; //get the value from the form
+            var convX = parseInt(x); //conver the value to the integer
+            var convY = parseInt(y); //conver the value to the integer
+            convY = convY / 100 ; //conver cm to m 
+            var BMI = convX / Math.pow(convY,2) ;
+            //Condition for determining the weight status
+            if ( BMI < 18.5) {
+                document.getElementById("para1").innerHTML = "Your BMI: " + BMI;
+                document.getElementById("para2").innerHTML = "This Means: Your BMI: That you are underweight."; }
+            else if (BMI >= 18.5 && BMI <= 24.9) {
+                document.getElementById("para1").innerHTML = "Your BMI: " + BMI;
+                document.getElementById("para2").innerHTML = "This Means: Your BMI: That you are healthy.";
+            }
+            else {
+                document.getElementById("para1").innerHTML = "Your BMI: " + BMI;
+                document.getElementById("para2").innerHTML = "This Means: Your BMI: That you are overweight.";
+            }
+        } 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <haed>
+        <meta charset="utf-8"> 
+        <title>Greeting</title>
+    </haed>
+
+    <body>
+        <p id = "para1"></p>
+
+    <script>
+var name ;
+var objectt = new Date();
+var hour = objectt.getHours();
+
+//get user name
+name = window.prompt("Enter your name :");
+
+//determine whether it is morning or afternoon
+if (hour < 12 ) {
+    document.getElementById("para1").innerHTML = "<h1>Good morning, " + name + "</h1>";
+}
+else {
+document.getElementById("para1").innerHTML = "<h1>Good afternoon, " + name + "</h1>";
+}
+    </script>
+        </body>
+        </html>
