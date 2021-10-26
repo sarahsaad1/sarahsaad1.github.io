@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang = "en ">
+<head>
+    <title>form-vaildation</title>
+    <meta charset="UTF-8">
+    <script>
+        function validation() {
+            
+         var fn = document.getElementById("fn").value;
+         var userName = document.getElementById("un").value;
+         var pass = document.getElementById("pas").value;
+         var confirmP = document.getElementById("cp").value;
+         var result1 = false;
+         var result2 = false;
+         var result3 = false;
+         var result4 = false;
+         var finalResult = false;
+         var re = /^[A-Za-z]+$/ ;
+      //    var re2 = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/; this Reg dont work 
+         var re2 = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/;
+         
+         //check for valid a name 
+        if (!(re.test(fn))) {
+         document.getElementById("e1").innerHTML = "* only letter is allowed" ;
+         document.getElementById("fn").style.borderColor = "red";
+         result1 = false ; }
+        
+         else {
+            document.getElementById("e1").innerHTML = "" ;
+            document.getElementById("fn").style.borderColor = "black";
+            result1 = true; }
+        
+        //Verify that the username is not empty 
+        if (userName == "") {
+            document.getElementById("e2").innerHTML = "* username must be filled out" ;
+            document.getElementById("un").style.borderColor = "red";
+            result2 = false ;
+         }
+         else {
+            document.getElementById("e2").innerHTML = "" ;
+            document.getElementById("un").style.borderColor = "black";
+            result2 = true; }
+      //Verify that the password meets the requirements 1
+      if (!(re2.test(pass))) {
+        document.getElementById("e3").innerHTML = "* Your password should at least one small letter and one capital letter and one digit" ;
+        document.getElementById("pas").style.borderColor = "red";
+        result3 = false;
+      }
+      //Verify that the password meets the requirements 2
+      else if (!(pass.length >= 6 && pass.length <= 10)) {
+        document.getElementById("e3").innerHTML = "* Your password should be 6- 10 length" ;
+        document.getElementById("pas").style.borderColor = "red";
+        result3 = false; }
+      //Verify that the password meets the requirements 3
+      else if (pass == userName) {
+        document.getElementById("e3").innerHTML = "* Your password should not the same of user-name " ;
+        document.getElementById("pas").style.borderColor = "red";
+        result3 = false;
+      }
+      
+      else {
+        document.getElementById("e3").innerHTML = "" ;
+        document.getElementById("pas").style.borderColor = "black";
+        result3 = true;
+      }
+      //Verify that confirm password equal to password
+      if (!(pass == confirmP)) {
+        document.getElementById("e4").innerHTML = "* Your pass does not match" ;
+        document.getElementById("cp").style.borderColor = "red";
+        result4 = false;
+      }
+
+      else {
+        document.getElementById("e4").innerHTML = "" ;
+        document.getElementById("cp").style.borderColor = "black";
+        result4 = true ;
+      }
+               //----------------final check-----------------------
+        if (result1==true && result2==true && result3 == true && result4 == true) {
+            finalResult = true;
+        }
+        else {
+            finalResult = false;
+        }
+        return finalResult;
+        }
+        </script>
+
+<style>
+    #e1 , #e2 , #e3 , #e4 {color: red;} 
+</style>
+</head>
+
+<body> 
+  <h1>SIGN UP</h1>
+
+<form onsubmit="return validation()">
+<label for = "fn">Full name: </label>
+<input type = "text" id = "fn" name = "fullName"><span id = "e1"></span><br><br>
+
+<label for = "un">User name: </label>
+<input type = "text" id = "un" name = "userName"><span id = "e2"></span><br><br>
+
+<label for = "pas">password: </label> 
+<input type="password" id = "pas"  name = "password"><span id = "e3"></span><br><br>
+
+<label for = "cp" >Confrim password:</label> 
+<input  type  = "password" id = "cp" name = "passcheck">
+<span id = "e4"></span><br><br>
+<input type = "submit" value="SIGN UP">
+
+    </form>
+    </body>
+    </html>
