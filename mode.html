@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta charset="utf-8"> 
+        <title>Dark and light Mode</title>
+        <script>
+            $(document).ready(function(){
+             $("#butt").click(function(){
+             $("body").toggleClass("modee");   
+
+             var x = $("body").attr("class"); //Assigning the value stored in the class attribute to x
+             if (x == "modee") { //Check if this value is equal to (modee)
+                 document.getElementById("butt").value="Light Mode"; }//Change the label on the button to Light Mode                   
+             else {
+                document.getElementById("butt").value="Dark Mode"; }//Change the label on the button to Dark Mode
+             });
+                       });
+            </script>
+            <style>
+            .modee {background-color: black;
+                    color :white}
+            </style>
+    </head>
+
+    
+<body>
+<input type = "button" id = "butt" value = "Dark Mode">
+             
+<h1>This is heading1</h1>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+<br>standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a <br>
+type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+<br>essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum <br>
+passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      
+</body>
+</html>
